@@ -18,8 +18,15 @@ body {
   margin: 0;
   background-color: #edecf8;
   display: initial;
-
+  width: 100%;
   /* Set the desired background color for the whole page */
+}
+
+header,
+body,
+footer {
+
+  max-width: 100%;
 }
 
 :root {
@@ -85,15 +92,25 @@ section h2 {
 
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  /* Adjust this value as needed */
+
+
+}
+
 header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 3%;
   background: rgba(36, 34, 40, 0.6);
   z-index: 1001;
 }
@@ -123,15 +140,7 @@ header .fa-bars {
   display: none;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  max-width: 100%;
-  /* Adjust this value as needed */
 
-
-}
 
 .home {
   text-align: center;
@@ -145,8 +154,8 @@ header .fa-bars {
   align-items: center;
   justify-content: center;
   /* Center content horizontally */
-  min-height: 60vh;
-  min-width: 100%;
+  min-height: 50vh;
+  width: 100%;
 }
 
 .home .content {
@@ -493,61 +502,6 @@ header .fa-bars {
   /* Make sure the last line aligns to the left */
 }
 
-/*
-.pchair{
-  width: 100%;
-}
-.pchair .row{
-
- background: url(../images/sousse1.jpg);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- background-attachment: fixed;
- position: relative;
- display: flex;
- align-items: center;
- min-height: 70vh;
-} 
-.row::before{
-  content: "";
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.pchair .row .team-slider  .box{
-  padding: 0 3%;
-}
-.pchair .team-slider .box .content{
-  background: #222;
-  box-shadow: 0 0.5 0.5 rgba(0, 0, 0, 0.6);
-  text-align: center;
-  padding: 4rem;
-  border-radius: 1rem;
-  height:30rem;
-}
-.pchair .team-slider .box .image img{
-  width: 10rem;
-  height: 7rem;
-  border-radius: 50%;
-  position: absolute;
-  top: 22rem; left: 1rem;
-  border: 0.3rem solid var(--sc-color);
-  
-}
-.pchair .team-slider .box .content h3{
-  font-size: 1.5rem;
-  color: var(--sc-color);
-  margin: 1rem;
-
-}
-.pchair .team-slider .box .content p{
-  color: #fff;
-  font-size: 1.2rem;
-}*/
 
 .ag p {
   font-size: 28px;
@@ -576,6 +530,8 @@ header .fa-bars {
 
 .footer .left-content {
   display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+
   align-items: center;
 }
 
@@ -702,6 +658,172 @@ footer .logo2 .logo-button2 {
 }
 
 /* Media queries */
+@media (max-width: 1250px) {
+
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    /* */
+    top: 1000rem;
+    left: 0;
+    text-align: center;
+    background: rgba(10, 10, 9, 0.6);
+    width: 100%;
+  }
+
+  header .navbar.active {
+    top: 5.5rem;
+  }
+
+  header .navbar a {
+    display: block;
+    margin: 0.3rem 0;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--min-color);
+  }
+
+  header .navbar a:hover {
+    background: var(--min-color);
+  }
+
+}
+
+.home {
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 100%;
+  padding: 0 5%;
+}
+
+.home .image {
+  width: 10%;
+  max-width: 10%;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.home .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home .content {
+  padding: 2rem;
+}
+
+.home .content h3 {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  white-space: normal;
+}
+
+.home .content h2 {
+  font-size: 1.8rem;
+}
+
+.home .content h1 {
+  font-size: 1.5rem;
+}
+
+.home .content a.btn {
+  font-size: 1.5rem;
+  padding: 0.6rem 2.5rem;
+}
+
+.footer {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
+  gap: 0.rem;
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 80%;
+}
+
+.footer .logo1 img {
+  width: 80%;
+  /* Adjust the width of the images as needed */
+  height: 80%;
+  margin-right: 10px;
+  /* Add margin to separate the images */
+  margin-left: 20px;
+
+
+}
+
+.footer .logo2 img {
+  width: 80%;
+  /* Adjust the width of the images as needed */
+  height: 80%;
+  margin-right: 0.5rem;
+  /* Add margin to separate the images */
+  margin-left: 120px;
+  /* Add margin to separate the images */
+
+}
+
+
+
+
+/* Customize the first button */
+/* Customize the first button */
+footer .logo1 .logo-button1 {
+  background-color: #082072;
+  color: #FFFFFF;
+  padding:5%;
+  /* Adjust the padding as per your desired size */
+  font-size: 0.6rem;
+  text-decoration: none;
+  margin-top: 55px;
+  margin-left: 40px;
+  width: 55px;
+  /* Define the width of the button */
+  height: 25px;
+  /* Define the height of the button */
+}
+
+/* Customize the second button */
+/* Customize the first button */
+footer .logo2 .logo-button2 {
+  background-color: #082072;
+  color: #FFFFFF;
+  padding: 5px 5px;
+  /* Adjust the padding as per your desired size */
+  font-size: 0.6rem;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-left: 150px;
+  width: 55px;
+  /* Define the width of the button */
+  height: 25px;
+  /* Define the height of the button */
+
+}
+
+.footer .right-content {
+  text-align: center;
+}
+
+
+
+.footer h3 {
+  font-size: 1.5rem;
+
+  color: var(--min-color);
+}
+
+.footer p {
+  font-size: 1.5rem;
+  color: var(--min-color);
+}
+.footer a{
+  font-size: 1rem;
+      color: var(--min-color);
+}
+
 @media (max-width: 850px) {
   header .fa-bars {
     display: block;
@@ -718,134 +840,33 @@ footer .logo2 .logo-button2 {
   }
 
   header .navbar.active {
-    top: 7.5rem;
+    top: 6rem;
   }
 
   header .navbar a {
     display: block;
     margin: 0.3rem 0;
     padding: 1rem;
-    font-size: 2.6rem;
+    font-size: 1.3rem;
     color: var(--min-color);
   }
 
   header .navbar a:hover {
     background: var(--min-color);
   }
-
-  header,
-  .home,
-  .body {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .home {
-    flex-wrap: wrap;
-    text-align: center;
-    max-width: 100%;
-    padding: 0 5%;
-  }
-
-  .home .image {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 5%;
-  }
-
-  .home .image img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .home .content {
-    padding: 2rem;
-  }
-
-  .home .content h3 {
+  header .logo {
     font-size: 2.5rem;
-    margin-top: 10px;
-    white-space: normal;
-  }
-
-  .home .content h2 {
-    font-size: 1.8rem;
-  }
-
-  .home .content h1 {
-    font-size: 1.5rem;
-  }
-
-  .home .content a.btn {
-    font-size: 1.5rem;
-    padding: 0.6rem 2.5rem;
-  }
-}
-
-@media (max-width: 650px) {
-  header .fa-bars {
-    display: block;
-  }
-
-  header .navbar {
-    position: fixed;
-    /* */
-    top: 1000rem;
-    left: 0;
-    text-align: center;
-    background: rgba(10, 10, 9, 0.6);
-    width: 100%;
-  }
-
-  header .navbar.active {
-    top: 7.5rem;
-  }
-
-  header .navbar a {
-    display: block;
-    margin: 0.3rem 0;
-    padding: 1rem;
-    font-size: 2.6rem;
     color: var(--min-color);
+    padding: 0.3rem;
   }
-
-  header .navbar a:hover {
-    background: var(--min-color);
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  header,
-  .home,
-  .body {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .home {
-    text-align: center;
-    background: url(../images/iot1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    display: block;
-    min-height: calc(100vh - 0.5rem);
-  }
-
   .home .content {
-    position: static;
+    position: left;
     color: var(--min-color);
-    text-align: left;
+    text-align: center;
     margin: 0;
-    padding: 2rem 5%;
+    padding: 1rem;
   }
+
 
   .home .content h3 {
     font-size: 2.5rem;
@@ -862,7 +883,7 @@ footer .logo2 .logo-button2 {
   }
 
   .home .content a.btn {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.6rem 2.5rem;
   }
 
@@ -894,11 +915,21 @@ footer .logo2 .logo-button2 {
     /* Place the text below the image */
   }
 
-  * Adjustments for CFP section */ .CFP {
+/* Adjust the width as needed */
+.left-content {
+  width: 100%;
+  /* 2/3 of the total width */
+}
+
+.right-content {
+  width: 100%;
+  /* 1/3 of the total width */
+}
+.CFP {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
     padding: 3rem 4%;
   }
 
@@ -915,11 +946,13 @@ footer .logo2 .logo-button2 {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    margin-left: 12px;
   }
 
   .CFP .custom-icon {
-    font-size: 3.2rem;
+    font-size: 6.2rem;
     margin-bottom: 1rem;
+    margin-left: 120px;
   }
 
   .CFP .content {
@@ -940,8 +973,6 @@ footer .logo2 .logo-button2 {
   .CFP .content li {
     margin-bottom: 10px;
   }
-
-
 
   /* Adjustments for subb section */
   .subb {
@@ -1050,5 +1081,840 @@ footer .logo2 .logo-button2 {
   .PC .content li {
     margin-bottom: 10px;
     font-size: 80%;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
+    gap: 0.rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 80%;
+  }
+
+  .footer .logo1 img {
+    width: 100%;
+    /* Adjust the width of the images as needed */
+    height: 100%;
+    margin-right: 10px;
+    /* Add margin to separate the images */
+    margin-left: 20px;
+
+
+  }
+
+  .footer .logo2 img {
+    width: 100%;
+    /* Adjust the width of the images as needed */
+    height: 100%;
+    margin-right: 0.5rem;
+    /* Add margin to separate the images */
+    margin-left: 120px;
+    /* Add margin to separate the images */
+
+  }
+
+
+
+
+  /* Customize the first button */
+  /* Customize the first button */
+  footer .logo1 .logo-button1 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 55px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+  }
+
+  /* Customize the second button */
+  /* Customize the first button */
+  footer .logo2 .logo-button2 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 52px;
+    margin-left: 150px;
+    width: 55px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+
+  }
+
+  .footer .right-content {
+    text-align: center;
+  }
+
+
+  .footer .right-content .link {
+    display: none;
+    /* Hide the links */
+  }
+
+  .footer h3 {
+    font-size: 1.5rem;
+
+    color: var(--min-color);
+  }
+
+  .footer p {
+    font-size: 0.5rem;
+    color: var(--min-color);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    /* */
+    top: 1000rem;
+    left: 0;
+    text-align: center;
+    background: rgba(10, 10, 9, 0.6);
+    width: 100%;
+  }
+
+  header .navbar.active {
+    top: 3.9rem;
+  }
+
+  header .navbar a {
+    display: block;
+    margin: 0.3rem 0;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--min-color);
+  }
+
+
+  header .navbar a:hover {
+    background: var(--min-color);
+  }
+
+  .home .content {
+    position: left;
+    color: var(--min-color);
+    text-align: center;
+    margin: 0;
+    padding: 0.1rem;
+  }
+
+
+  .home .content h3 {
+    font-size: 2rem;
+    margin-top: 10px;
+    white-space: normal;
+  }
+
+  .home .content h2 {
+    font-size: 1.4rem;
+  }
+
+  .home .content h1 {
+    font-size: 1rem;
+  }
+
+  .home .content a.btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .workshop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .workshop .left-content,
+  .workshop .right-content {
+    margin: 0rem 0;
+ 
+  }
+
+  .workshop .left-content img,
+  .workshop .right-content img {
+    max-width: 100%;
+    height: auto;
+    order: 1;
+    
+    /* Place the image on top */
+  }
+
+  .workshop .left-content p,
+  .workshop .right-content p {
+    order: 2;
+    /* Place the text below the image */
+  }
+.left-content p,
+.right-content p {
+  
+  font-size: 16px;
+  /* Change the font size here */
+  line-height: 1.2;
+  /* Change the line spacing here */
+  text-align: justify;
+  /* Justify the text */
+  color: rgb(11, 11, 49);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Adjust the width as needed */
+.left-content {
+  width: 100%;
+  /* 2/3 of the total width */
+}
+
+.right-content {
+  width: 100%;
+  /* 1/3 of the total width */
+}
+
+   .CFP {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding: 3rem 3%;
+  }
+
+  .CFP .heading {
+    margin: 2rem auto;
+  }
+
+  .CFP .heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .CFP .custom-icon {
+    font-size: 4.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .CFP .content {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .CFP .content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0rem;
+  }
+
+  .CFP .content ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  .CFP .content li {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+
+  /* Adjustments for subb section */
+  .subb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 6%;
+  }
+
+  .subb .heading {
+    margin: 2rem auto;
+  }
+
+  .subb .heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .subb .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .subb .content {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .subb .content ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  .subb .content li {
+    margin-bottom: 10px;
+  }
+
+  .subb .fa-send-o {
+    font-size: 3.2rem;
+    margin-top: 1rem;
+  }
+
+  .impdate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 4%;
+  }
+
+  .impdate .custom-icon {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: auto;
+
+    order: 1;
+  }
+
+  .impdate .fa-calendar {
+    font-size: 4.2rem;
+    margin-right: auto;
+
+  }
+
+  .impdate .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    order: 2;
+  }
+
+  .impdate .content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .impdate .content li {
+   font: size 10px;
+  }
+
+
+  .PC .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  #PC .fa-edit {
+    font-size: 148px;
+    margin-left: -100px;
+  }
+
+  .PC .content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .PC .content ul {
+    text-align: left;
+    margin-left: auto;
+  }
+
+  .PC .content li {
+    margin-bottom: 10px;
+    font-size: 80%;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
+    gap: 0.rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 80%;
+  }
+
+  .footer .logo1 img {
+    width: 70%;
+    /* Adjust the width of the images as needed */
+    height: 50%;
+    margin-right: 0px;
+    /* Add margin to separate the images */
+    margin-left: 0px;
+
+
+  }
+
+  .footer .logo2 img {
+    width: 60%;
+    /* Adjust the width of the images as needed */
+    height: 60%;
+    margin-right: 0.5rem;
+    /* Add margin to separate the images */
+    margin-left: 10px;
+    /* Add margin to separate the images */
+    margin-top:10px;
+
+  }
+
+
+
+
+  /* Customize the first button */
+  /* Customize the first button */
+  footer .logo1 .logo-button1 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 35px;
+    margin-left: 0px;
+    width: 55px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+  }
+
+  /* Customize the second button */
+  /* Customize the first button */
+  footer .logo2 .logo-button2 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 2px;
+    margin-left: 50px;
+    width: 55px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+
+  }
+
+  .footer .right-content {
+    text-align: center;
+  }
+
+
+  .footer .right-content .link {
+    display: none;
+    /* Hide the links */
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+
+  }
+
+  .footer p {
+    font-size: 0.3rem;
+
+  }
+  #subb .content li {
+    margin-bottom: 0.1rem;
+    font-size: 16px;
+    text-justify: right;
+  }
+
+
+  #subb .fa-send-o {
+    font-size: 70px;
+    color: rgb(11, 11, 49);
+  }
+  #PC .fa-edit {
+    font-size: 70px;
+
+  }
+  #PC .content li{
+    font-size: 18px;
+  }
+  #phair .content-wrapper p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    /* */
+    top: 1000rem;
+    left: 0;
+    text-align: center;
+    background: rgba(10, 10, 9, 0.6);
+    width: 100%;
+  }
+
+  header .navbar.active {
+    top: 3.9rem;
+  }
+
+  header .navbar a {
+    display: block;
+    margin: 0.3rem 0;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--min-color);
+  }
+
+
+  header .navbar a:hover {
+    background: var(--min-color);
+  }
+
+  .home .content {
+    position: left;
+    color: var(--min-color);
+    text-align: center;
+    margin: 0;
+    padding: 0.1rem;
+  }
+
+
+  .home .content h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    white-space: normal;
+  }
+
+  .home .content h2 {
+    font-size: 1rem;
+  }
+
+  .home .content h1 {
+    font-size: 0.8rem;
+  }
+
+  .home .content a.btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .workshop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .workshop .left-content,
+  .workshop .right-content {
+    margin: 0rem 0;
+ 
+  }
+
+  .workshop .left-content img,
+  .workshop .right-content img {
+    max-width: 100%;
+    height: auto;
+    order: 1;
+    
+    /* Place the image on top */
+  }
+
+  .workshop .left-content p,
+  .workshop .right-content p {
+    order: 2;
+    /* Place the text below the image */
+  }
+.left-content p,
+.right-content p {
+  
+  font-size: 16px;
+  /* Change the font size here */
+  line-height: 1.2;
+  /* Change the line spacing here */
+  text-align: justify;
+  /* Justify the text */
+  color: rgb(11, 11, 49);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Adjust the width as needed */
+.left-content {
+  width: 100%;
+  /* 2/3 of the total width */
+}
+
+.right-content {
+  width: 100%;
+  /* 1/3 of the total width */
+}
+
+   .CFP {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding: 3rem 3%;
+  }
+
+  .CFP .heading {
+    margin: 2rem auto;
+  }
+
+  .CFP .heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .CFP .custom-icon {
+    font-size: 4.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .CFP .content {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .CFP .content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0rem;
+  }
+
+  .CFP .content ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  .CFP .content li {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+
+  /* Adjustments for subb section */
+  .subb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 6%;
+  }
+
+  .subb .heading {
+    margin: 2rem auto;
+  }
+
+  .subb .heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .subb .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .subb .content {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .subb .content ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  .subb .content li {
+    margin-bottom: 10px;
+  }
+
+  .subb .fa-send-o {
+    font-size: 3.2rem;
+    margin-top: 1rem;
+  }
+
+  .impdate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 4%;
+  }
+
+  .impdate .custom-icon {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: auto;
+
+    order: 1;
+  }
+
+  .impdate .fa-calendar {
+    font-size: 4.2rem;
+    margin-right: auto;
+
+  }
+
+  .impdate .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    order: 2;
+  }
+
+  .impdate .content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .impdate .content li {
+   font: size 10px;
+  }
+
+
+  .PC .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  #PC .fa-edit {
+    font-size: 148px;
+    margin-left: -100px;
+  }
+
+  .PC .content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .PC .content ul {
+    text-align: left;
+    margin-left: auto;
+  }
+
+  .PC .content li {
+    margin-bottom: 10px;
+    font-size: 80%;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
+    gap: 0.rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 80%;
+  }
+
+  .footer .logo1 img {
+    width: 80%;
+    /* Adjust the width of the images as needed */
+    height: 80%;
+    margin-right: 0px;
+    /* Add margin to separate the images */
+    margin-left: 0px;
+
+
+  }
+
+  .footer .logo2 img {
+    width: 80%;
+    /* Adjust the width of the images as needed */
+    height: 80%;
+    margin-right: 0.5rem;
+    /* Add margin to separate the images */
+    margin-left: 10px;
+    /* Add margin to separate the images */
+    margin-top:10px;
+
+  }
+
+
+
+
+  /* Customize the first button */
+  /* Customize the first button */
+  footer .logo1 .logo-button1 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-left: 0px;
+    width: 55px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+  }
+
+  /* Customize the second button */
+  /* Customize the first button */
+  footer .logo2 .logo-button2 {
+    background-color: #082072;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    /* Adjust the padding as per your desired size */
+    font-size: 0.6rem;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 65px;
+    /* Define the width of the button */
+    height: 25px;
+    /* Define the height of the button */
+
+  }
+
+  .footer .right-content {
+    text-align: center;
+  }
+
+
+  .footer .right-content .link {
+    display: none;
+    /* Hide the links */
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+
+  }
+
+  .footer p {
+    font-size: 0.3rem;
+
+  }
+  #subb .content li {
+    margin-bottom: 0.1rem;
+    font-size: 16px;
+    text-justify: right;
+  }
+
+
+  #subb .fa-send-o {
+    font-size: 70px;
+    color: rgb(11, 11, 49);
+  }
+  #PC .fa-edit {
+    font-size: 70px;
+
+  }
+  #PC .content li{
+    font-size: 18px;
+  }
+  #phair .content-wrapper p {
+    font-size: 14px;
   }
 }
